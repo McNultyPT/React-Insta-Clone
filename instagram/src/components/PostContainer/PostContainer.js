@@ -1,7 +1,6 @@
 import React from 'react';
 
 import CommentSection from '../CommentSection/CommentSection';
-import { POINT_CONVERSION_COMPRESSED } from 'constants';
 
 function PostContainer(props) {
     return (
