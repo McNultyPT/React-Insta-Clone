@@ -1,4 +1,5 @@
 import React from 'react';
+import './CommentSection.css';
 
 import Comment from './Comment';
 
@@ -19,16 +20,16 @@ class CommentSection extends React.Component {
 
     render() {
         return (
-           <div>
-               <div>
+           <div className='commentContainer'>
+               <div className='commentTop'>
                     <i class="far fa-heart fa-lg" onClick={this.addNewLike}></i>
                     <i class="far fa-comment fa-lg"></i>    
-                    <div>
+                    <div className='likesContainer'>
                         <h3>{this.state.likes}</h3>
                         <p>likes</p>
                     </div>
                </div>
-               <div>
+               <div className='commentMid'>
                     {this.state.commentArr.map((data, index) => {
                         return <Comment
                             comments={data.comments}
@@ -37,15 +38,17 @@ class CommentSection extends React.Component {
                             key={index}
                         />
                     })}
-                <p>{this.props.timestamp}</p>
+                <h4>{this.props.timestamp}</h4>
                </div>
-               <form>
-                   <input
-                        type='text'
-                        placeholder='Add a comment...'
-                   />
-               </form>
-           </div>
+               <div className='commentBot'>
+                    <form>
+                        <input
+                            type='text'
+                            placeholder='Add a comment...'
+                        />
+                    </form>
+                </div>
+            </div>
         );
     }
 }

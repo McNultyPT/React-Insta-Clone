@@ -1,0 +1,61 @@
+.commentTop {
+    margin: 10px 0 0 17px;
+}
+.commentTop i {
+    margin-right: 20px;
+}
+
+.likesContainer {
+    display: flex;
+    margin-top: -8px;
+}
+
+.likesContainer h3 {
+    font-size: 15px;
+}
+
+.likesContainer p {
+    margin: 15px 0 0 5px;
+    font-size: 15px;
+}
+
+.comment {
+    display: flex;
+    margin: 0 0 7px 15px;
+    line-height: 1.8;
+}
+
+.comment h3 {
+    margin: -10px 0 0 0;
+    font-size: 15px;
+}
+
+.comment p {
+    margin: -10px 0 0 5px;
+    font-size: 15px;
+}
+
+.commentMid h4 {
+    font-size: 10px;
+    color: grey;
+    margin: -5px 0 0 15px;
+}
+
+.commentBot {
+    margin: 10px 0 0 0;
+}
+
+.commentBot input {
+    width: 565px;
+    height: 51px;
+    font-size: 14px;
+    color: grey;
+    margin-left:15px;
+    margin-right: 15px;
+    border-top: 1px solid lightgrey;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+
