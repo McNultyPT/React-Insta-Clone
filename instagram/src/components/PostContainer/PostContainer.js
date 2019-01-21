@@ -1,10 +1,11 @@
 import React from 'react';
+import './PostContainer.css';
 
 import CommentSection from '../CommentSection/CommentSection';
 
 function PostContainer(props) {
     return (
-        <div>
+        <div className='postCont'>
             <div className='topContent'>
                 <img src={props.thumbnailUrl} />
                 <h3>{props.username}</h3>

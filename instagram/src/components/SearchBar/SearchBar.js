@@ -4,12 +4,12 @@ import './SearchBar.css';
 
 function SearchBar() {
     return (
-        <div>
-            <div>
-                <i class="fab fa-instagram fa-3x"></i>
+        <div className='searchContainer'>
+            <div className='searchLeft'>
+                <i class="fab fa-instagram fa-4x"></i>
                 <h1>Instagram</h1>
             </div>
-            <div>
+            <div className='searchMid'>
                 <form>
                     <input 
                         type='search bar'
@@ -17,10 +17,10 @@ function SearchBar() {
                     />
                 </form>
             </div>
-            <div>
-                <i class="far fa-compass fa-2x"></i>
-                <i class="far fa-heart fa-2x"></i>
-                <i class="far fa-user fa-2x"></i> 
+            <div className='searchRight'>
+                <i class="far fa-compass fa-3x"></i>
+                <i class="far fa-heart fa-3x"></i>
+                <i class="far fa-user fa-3x"></i> 
             </div>
         </div>
     )
