@@ -2,14 +2,34 @@ import React from 'react';
 
 import Comment from './Comment';
 
-function CommentSection(props) {
-    return (
-        <Comment
-            comments={props.comments}
-            username={props.username}
-            text={props.text}
-        />
-    );
+class CommentSection extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state= {
+            commentArr: []
+        }
+    }
+
+    componentDidMount() {
+        this.setState({
+            commentArr: this.props.comments
+        })
+    }
+
+    render() {
+        return (
+           <div>
+               {this.state.commentArr.map((data, index) => {
+                   return <Comment
+                        comments={data.comments}
+                        username={data.username}
+                        text={data.text}
+                        key={index}
+                    />
+               })}
+           </div>
+        );
+    }
 }
 
 export default CommentSection;
