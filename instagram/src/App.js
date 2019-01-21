@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import PropTypes from 'prop-types';
 
+import './App.css';
 import dummyData from './dummy-data';
 import PostContainer from './components/PostContainer/PostContainer';
 import SearchBar from './components/SearchBar/SearchBar';
+
 
 class App extends Component {
   constructor(props) {
@@ -37,6 +39,15 @@ class App extends Component {
       </div>
     );
   }
+}
+
+App.propTypes = {
+  username: PropTypes.string,
+  thumbnailUrl: PropTypes.string,
+  imageUrl: PropTypes.string,
+  likes: PropTypes.number,
+  timestamp: PropTypes.string,
+  comments: PropTypes.array
 }
 
 export default App;

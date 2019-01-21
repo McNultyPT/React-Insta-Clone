@@ -1,6 +1,7 @@
 import React from 'react';
-import './CommentSection.css';
+import PropTypes from 'prop-types';
 
+import './CommentSection.css';
 import Comment from './Comment';
 
 class CommentSection extends React.Component {
@@ -22,7 +23,7 @@ class CommentSection extends React.Component {
         return (
            <div className='commentContainer'>
                <div className='commentTop'>
-                    <i class="far fa-heart fa-lg" onClick={this.addNewLike}></i>
+                    <i class="far fa-heart fa-lg"></i>
                     <i class="far fa-comment fa-lg"></i>    
                     <div className='likesContainer'>
                         <h3>{this.state.likes}</h3>
@@ -51,6 +52,14 @@ class CommentSection extends React.Component {
             </div>
         );
     }
+}
+
+CommentSection.propTypes = {
+    likes: PropTypes.number,
+    comments: PropTypes.array,
+    username: PropTypes.string,
+    text: PropTypes.string,
+    timestamp: PropTypes.string
 }
 
 export default CommentSection;

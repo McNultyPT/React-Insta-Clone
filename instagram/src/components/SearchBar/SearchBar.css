@@ -4,7 +4,7 @@
     width: 100%;
     border-bottom: 1px solid lightgrey;
     padding-bottom: 45px;
-    margin-bottom: 75px;
+    margin-bottom: 50px;
 }
 
 .searchLeft {
@@ -32,6 +32,7 @@
     border: 2px solid lightgrey;
     font-size: 28px;
     text-align: center;
+    margin-right: 50px;
 }
 
 .searchRight {
