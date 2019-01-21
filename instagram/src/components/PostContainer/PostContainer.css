@@ -1,0 +1,24 @@
+.postCont {
+    margin-bottom: 25px;
+}
+
+.topContent {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.topContent img {
+    border-radius: 50%;
+    height: 30px;
+    margin: 17px 0 0 17px;
+}
+
+.topContent h3 {
+    font-size: 15px;
+    margin: 20px 0 0 10px;
+}
+
+.midContent img {
+    width: 600px;
+    height: 600px;
+}
