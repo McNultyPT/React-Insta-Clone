@@ -2,7 +2,7 @@ import React from 'react';
 
 import './SearchBar.css';
 
-function SearchBar() {
+function SearchBar(props) {
     return (
         <div className='searchContainer'>
             <div className='searchLeft'>
@@ -10,10 +10,13 @@ function SearchBar() {
                 <h1>Instagram</h1>
             </div>
             <div className='searchMid'>
-                <form>
+                <form onSubmit={ (e) => props.searchFilter(e)}>
                     <input 
                         type='search bar'
                         placeholder='Search'
+                        name='searchInput'
+                        value={props.searchInput}
+                        onChange={props.handleChanges}
                     />
                 </form>
             </div>

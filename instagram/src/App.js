@@ -11,7 +11,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postData: []
+      postData: [],
+      searchInput: '',
     }
   }
 
@@ -21,10 +22,30 @@ class App extends Component {
     });
   }
 
+  handleChanges = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  searchFilter = e => {
+    e.preventDefault();
+    let result = this.state.postData.filter( post => {
+      if(post.username.includes(this.state.searchInput)) {
+        return post.username;
+      }
+    })
+    this.setState({
+      postData: result
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar
+          handleChanges={this.handleChanges}
+          searchInput={this.state.searchInput}
+          searchFilter={this.searchFilter}
+        />
         {this.state.postData.map((data, index) => {
           return <PostContainer
             username={data.username}
@@ -40,6 +61,26 @@ class App extends Component {
     );
   }
 }
+
+// render() {
+//   return (
+//     <div className="App">
+//       <SearchBar />
+//       {this.state.postData.map((data, index) => {
+//         return <PostContainer
+//           username={data.username}
+//           thumbnailUrl={data.thumbnailUrl}
+//           imageUrl={data.imageUrl}
+//           likes={data.likes}
+//           timestamp={data.timestamp}
+//           comments={data.comments}
+//           key={index}
+//       />
+//       })}
+//     </div>
+//   );
+// }
+// }
 
 App.propTypes = {
   username: PropTypes.string,
