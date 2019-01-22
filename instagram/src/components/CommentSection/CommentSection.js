@@ -19,11 +19,23 @@ class CommentSection extends React.Component {
         })
     }
 
+    handleChanges = e => {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
+    addNewLike = () => {
+        this.setState((prevState) => {
+            return {
+                likes: ++prevState.likes
+            }
+        })
+    }
+
     render() {
         return (
            <div className='commentContainer'>
                <div className='commentTop'>
-                    <i class="far fa-heart fa-lg"></i>
+                    <i class="far fa-heart fa-lg" onClick={this.addNewLike}></i>
                     <i class="far fa-comment fa-lg"></i>    
                     <div className='likesContainer'>
                         <h3>{this.state.likes}</h3>
