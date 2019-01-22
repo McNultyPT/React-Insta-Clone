@@ -9,7 +9,8 @@ class CommentSection extends React.Component {
         super(props);
         this.state= {
             commentArr: [],
-            likes: props.likes
+            likes: props.likes,
+            commentData: '',
         }
     }
 
@@ -28,6 +29,18 @@ class CommentSection extends React.Component {
             return {
                 likes: ++prevState.likes
             }
+        })
+    }
+
+    addNewComment = e => {
+        e.preventDefault();
+        this.setState({
+            commentArr: [...this.state.commentArr,
+                {username: 'instaUser123',
+                 text: this.state.commentData
+                }
+            ],
+            commentData: ''
         })
     }
 
@@ -54,10 +67,13 @@ class CommentSection extends React.Component {
                 <h4>{this.props.timestamp}</h4>
                </div>
                <div className='commentBot'>
-                    <form>
+                    <form onSubmit={this.addNewComment}>
                         <input
                             type='text'
                             placeholder='Add a comment...'
+                            value={this.state.commentData}
+                            name='commentData'
+                            onChange={this.handleChanges}
                         />
                     </form>
                 </div>
