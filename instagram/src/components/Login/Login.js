@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Login.css';
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -21,32 +23,35 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <h2>Instagram</h2>
-                </div>
-                <div>
-                    <input 
-                        type='username'
-                        placeholder='Username'
-                        name='username'
-                        onChange={this.handleChanges}
-                        value={this.state.username}
-                        required
-                    />
-                    <input 
-                        type='password'
-                        placeholder='Password'
-                        value={this.state.password}
-                        name='password'
-                        onChange={this.handleChanges}
-                        required
-                    />
-                    <button
-                        type='submit'
-                        value='Login'
-                        onClick={this.userLogin}
-                    >Login</button>
+            <div className='pageCont'>
+                <img src='https://images.pexels.com/photos/1260239/pexels-photo-1260239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />'
+                <div className='loginCont'>
+                    <div className='headerCont'>
+                        <h2>Instagram</h2>
+                    </div>
+                    <div className='inputCont'>
+                        <input 
+                            type='username'
+                            placeholder='Username'
+                            name='username'
+                            onChange={this.handleChanges}
+                            value={this.state.username}
+                            required
+                        />
+                        <input 
+                            type='password'
+                            placeholder='Password'
+                            value={this.state.password}
+                            name='password'
+                            onChange={this.handleChanges}
+                            required
+                        />
+                        <button
+                            type='submit'
+                            value='Login'
+                            onClick={this.userLogin}
+                        >Login</button>
+                    </div>
                 </div>
             </div>
         )

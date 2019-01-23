@@ -11,6 +11,7 @@ class CommentSection extends React.Component {
             commentArr: [],
             likes: props.likes,
             commentData: '',
+            username:''
         }
     }
 
@@ -36,7 +37,7 @@ class CommentSection extends React.Component {
         e.preventDefault();
         this.setState({
             commentArr: [...this.state.commentArr,
-                {username: 'instaUser123',
+                {username: localStorage.getItem('username'),
                  text: this.state.commentData
                 }
             ],
