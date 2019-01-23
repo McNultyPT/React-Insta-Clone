@@ -1,4 +1,5 @@
 import React from 'react';
+// import PropTypes from 'prop-types';
 
 import './PostContainer.css';
 import SearchBar from '../SearchBar/SearchBar';
@@ -27,5 +28,12 @@ function PostsPage(props) {
         </div>
     )
 }
+
+// PostsPage.propTypes = {
+//     handleChanges: PropTypes.function,
+//     searchInput: PropTypes.string,
+//     searchFilter: PropTypes.function,
+//     postData: PropTypes.array
+// }
 
 export default PostsPage;
