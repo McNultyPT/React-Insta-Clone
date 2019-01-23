@@ -62,33 +62,4 @@ class App extends Component {
   }
 }
 
-// render() {
-//   return (
-//     <div className="App">
-//       <SearchBar />
-//       {this.state.postData.map((data, index) => {
-//         return <PostContainer
-//           username={data.username}
-//           thumbnailUrl={data.thumbnailUrl}
-//           imageUrl={data.imageUrl}
-//           likes={data.likes}
-//           timestamp={data.timestamp}
-//           comments={data.comments}
-//           key={index}
-//       />
-//       })}
-//     </div>
-//   );
-// }
-// }
-
-App.propTypes = {
-  username: PropTypes.string,
-  thumbnailUrl: PropTypes.string,
-  imageUrl: PropTypes.string,
-  likes: PropTypes.number,
-  timestamp: PropTypes.string,
-  comments: PropTypes.array
-}
-
 export default App;

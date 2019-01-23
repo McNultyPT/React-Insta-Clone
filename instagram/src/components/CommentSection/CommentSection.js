@@ -85,8 +85,6 @@ class CommentSection extends React.Component {
 CommentSection.propTypes = {
     likes: PropTypes.number,
     comments: PropTypes.array,
-    username: PropTypes.string,
-    text: PropTypes.string,
     timestamp: PropTypes.string
 }
 
