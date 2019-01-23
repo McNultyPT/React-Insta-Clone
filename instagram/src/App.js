@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import './App.css';
 import dummyData from './dummy-data';
-import PostContainer from './components/PostContainer/PostContainer';
-import SearchBar from './components/SearchBar/SearchBar';
+import PostsPage from './components/PostContainer/PostsPage';
 
 
 class App extends Component {
@@ -41,22 +39,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar
+        <PostsPage
           handleChanges={this.handleChanges}
           searchInput={this.state.searchInput}
-          searchFilter={this.searchFilter}
+          searchFilter={this.searchFilter} 
+          postData={this.state.postData} 
         />
-        {this.state.postData.map((data, index) => {
-          return <PostContainer
-            username={data.username}
-            thumbnailUrl={data.thumbnailUrl}
-            imageUrl={data.imageUrl}
-            likes={data.likes}
-            timestamp={data.timestamp}
-            comments={data.comments}
-            key={index}
-        />
-        })}
       </div>
     );
   }
