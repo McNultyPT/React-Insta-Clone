@@ -28,13 +28,13 @@ class App extends Component {
 
   searchFilter = e => {
     e.preventDefault();
-    let result = this.state.postData.filter( post => {
+    let searchResult = this.state.postData.filter( post => {
       if(post.username.includes(this.state.searchInput)) {
         return post.username;
       }
     })
     this.setState({
-      postData: result
+      postData: searchResult
     })
   }
 
