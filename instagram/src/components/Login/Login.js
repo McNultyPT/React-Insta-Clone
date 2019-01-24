@@ -24,10 +24,11 @@ class Login extends React.Component {
     render() {
         return (
             <div className='pageCont'>
-                <img src='https://images.pexels.com/photos/1260239/pexels-photo-1260239.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260' />'
+                <img src='https://i1.sndcdn.com/artworks-000146899184-z2d199-t500x500.jpg' />'
                 <div className='loginCont'>
                     <div className='headerCont'>
-                        <h2>Instagram</h2>
+                        <h2>Insta</h2>
+                        <img src='https://static1.fjcdn.com/comments/Victim+blam+_1e769e2bbdc2c42861767356de0be360.jpg' />
                     </div>
                     <div className='inputCont'>
                         <input 

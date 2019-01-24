@@ -7,8 +7,9 @@ function SearchBar(props) {
     return (
         <div className='searchContainer'>
             <div className='searchLeft'>
-                <i class="fab fa-instagram fa-4x"></i>
-                <h1>Instagram</h1>
+                <i class="fab fa-instagram fa-3x"></i>
+                <h1>Insta</h1>
+                <img src='https://static1.fjcdn.com/comments/Victim+blam+_1e769e2bbdc2c42861767356de0be360.jpg' />
             </div>
             <div className='searchMid'>
                 <form onSubmit={ (e) => props.searchFilter(e)}>
@@ -22,9 +23,9 @@ function SearchBar(props) {
                 </form>
             </div>
             <div className='searchRight'>
-                <i class="far fa-compass fa-3x"></i>
-                <i class="far fa-heart fa-3x"></i>
-                <i class="far fa-user fa-3x"></i> 
+                <i class="far fa-compass fa-2x"></i>
+                <i class="far fa-heart fa-2x"></i>
+                <i class="far fa-user fa-2x"></i> 
             </div>
         </div>
     )
