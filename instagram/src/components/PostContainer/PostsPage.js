@@ -1,11 +1,16 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import './PostContainer.css';
 import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
 import dummyData from '../../dummy-data';
 
+const PostsPageCont = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+`;
 
 class PostsPage extends React.Component {
     constructor(props) {
@@ -40,7 +45,7 @@ class PostsPage extends React.Component {
 
     render() {
          return(
-            <div className='postsPage'>
+            <PostsPageCont>
                 <SearchBar
                     handleChanges={this.handleChanges}
                     searchInput={this.state.searchInput}
@@ -57,16 +62,16 @@ class PostsPage extends React.Component {
                                 key={index}
                             />
                     })}  
-            </div>
+            </PostsPageCont>
         )
     }
 }
 
-// PostsPage.propTypes = {
-//     handleChanges: PropTypes.function,
-//     searchInput: PropTypes.string,
-//     searchFilter: PropTypes.function,
-//     postData: PropTypes.array
-// }
+PostsPage.propTypes = {
+    handleChanges: PropTypes.func,
+    searchInput: PropTypes.string,
+    searchFilter: PropTypes.func,
+    postData: PropTypes.array
+}
 
 export default PostsPage;

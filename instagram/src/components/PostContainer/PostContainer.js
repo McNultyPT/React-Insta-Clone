@@ -1,26 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import './PostContainer.css';
+import styled from 'styled-components';
 
 import CommentSection from '../CommentSection/CommentSection';
 
+const PostCont = styled.div`
+    margin-bottom: 25px;
+    border: 1px solid lightgrey;
+`;
+
+const PostTop = styled.div`
+    display: flex;
+    margin-bottom: 15px;
+`;
+
+const Thumbnail = styled.img`
+    border-radius: 50%;
+    height: 30px;
+    margin: 17px 0 0 17px;
+`;
+
+const PostH3 = styled.h3`
+    font-size: 15px;
+    margin: 20px 0 0 10px;
+`;
+
+const PostImg = styled.img`
+    width: 605px;
+    height: 600px;
+`;
+
 function PostContainer(props) {
     return (
-        <div className='postCont'>
-            <div className='topContent'>
-                <img src={props.thumbnailUrl} alt='thumbnail' />
-                <h3>{props.username}</h3>
-            </div>
-            <div className='midContent'>
-                <img src={props.imageUrl} alt='post' />
+        <PostCont>
+            <PostTop>
+                <Thumbnail src={props.thumbnailUrl} alt='thumbnail' />
+                <PostH3>{props.username}</PostH3>
+            </PostTop>
+            <div>
+                <PostImg src={props.imageUrl} alt='post' />
             </div>
             <CommentSection
                 likes={props.likes}
                 comments={props.comments}
                 timestamp={props.timestamp}
             />
-        </div>
+        </PostCont>
     )
 }
 

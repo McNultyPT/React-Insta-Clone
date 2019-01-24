@@ -84,9 +84,9 @@ function SearchBar(props) {
 }
 
 SearchBar.propTypes = {
-    searchFilter: PropTypes.function,
+    searchFilter: PropTypes.func,
     searchInput: PropTypes.string,
-    handleChanges: PropTypes.function
+    handleChanges: PropTypes.func
 }
 
 export default SearchBar;
