@@ -1,6 +1,77 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import './Login.css';
+const LoginPageCont = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+`;
+
+const LoginImg = styled.img`
+    height: 500px;
+    width: 400px;
+    border-radius: 6px;
+`;
+
+const LoginCont = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid lightgrey;
+    border-radius: 6px;
+    height: 500px;
+    width: 400px;
+`;
+
+const LoginLogoCont = styled.div`
+    display: flex;
+`;
+
+const LoginH2 = styled.h2`
+    font-size: 50px;
+    font-family: Helvetica;
+    font-weight: bold;
+    margin: 50px 0px;
+`;
+
+const LoginLogo = styled.img`
+    height: 150px;
+    width: 150px;
+`;
+
+const LoginInputCont = styled.div`
+    display: flex;
+    flex-direction: column; 
+`;
+
+const LoginInput = styled.input`
+    width: 290px;
+    height: 35px;
+    font-size: 14px;
+    margin: 15px 0;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    padding-left: 10px;
+`;
+
+const LoginButton = styled.button`
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 2px solid black;
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+    font-size: 16px;
+
+    &:hover {
+        color: yellow;
+        background-color: red;
+        border: 2px solid black;
+    }
+`;
 
 class Login extends React.Component {
     constructor(props) {
@@ -23,15 +94,15 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div className='pageCont'>
-                <img src='https://i1.sndcdn.com/artworks-000146899184-z2d199-t500x500.jpg' />'
-                <div className='loginCont'>
-                    <div className='headerCont'>
-                        <h2>Insta</h2>
-                        <img src='https://static1.fjcdn.com/comments/Victim+blam+_1e769e2bbdc2c42861767356de0be360.jpg' />
-                    </div>
-                    <div className='inputCont'>
-                        <input 
+            <LoginPageCont>
+                <LoginImg src='https://i1.sndcdn.com/artworks-000146899184-z2d199-t500x500.jpg' />'
+                <LoginCont>
+                    <LoginLogoCont>
+                        <LoginH2>Insta</LoginH2>
+                        <LoginLogo src='https://static1.fjcdn.com/comments/Victim+blam+_1e769e2bbdc2c42861767356de0be360.jpg' />
+                    </LoginLogoCont>
+                    <LoginInputCont>
+                        <LoginInput 
                             type='username'
                             placeholder='Username'
                             name='username'
@@ -39,7 +110,7 @@ class Login extends React.Component {
                             value={this.state.username}
                             required
                         />
-                        <input 
+                        <LoginInput 
                             type='password'
                             placeholder='Password'
                             value={this.state.password}
@@ -47,14 +118,14 @@ class Login extends React.Component {
                             onChange={this.handleChanges}
                             required
                         />
-                        <button
+                        <LoginButton
                             type='submit'
                             value='Login'
                             onClick={this.userLogin}
-                        >Login</button>
-                    </div>
-                </div>
-            </div>
+                        >Login</LoginButton>
+                    </LoginInputCont>
+                </LoginCont>
+            </LoginPageCont>
         )
     }
 }
