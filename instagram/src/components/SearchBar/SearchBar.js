@@ -64,7 +64,7 @@ function SearchBar(props) {
                 <SearchImg src='https://static1.fjcdn.com/comments/Victim+blam+_1e769e2bbdc2c42861767356de0be360.jpg' />
             </LogoHeader>
             <SearchMid>
-                <form onSubmit={ (e) => props.searchFilter(e)}>
+                <form onChange={ (e) => props.searchFilter(e)}>
                     <SearchInput 
                         type='search bar'
                         placeholder='Search'

@@ -30,21 +30,22 @@ class PostsPage extends React.Component {
     handleChanges = e => {
         this.setState({ [e.target.name]: e.target.value });
       }
-    
-    searchFilter = e => {
+
+      searchFilter = e => {
         e.preventDefault();
-        let searchResult = this.state.postData.filter( post => {
-          if(post.username.includes(this.state.searchInput)) {
-            return post.username;
-          }
-        })
+        const filteredPosts = this.state.postData.filter( post => {
+            if (post.username.includes(this.state.searchInput)) {
+                return post;
+            }
+            return null;
+        });
         this.setState({
-          postData: searchResult
+            postData: filteredPosts
         })
-      }
+      };
 
     render() {
-         return(
+        return(
             <PostsPageCont>
                 <SearchBar
                     handleChanges={this.handleChanges}
