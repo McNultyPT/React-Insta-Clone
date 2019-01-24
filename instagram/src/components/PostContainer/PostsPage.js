@@ -17,7 +17,8 @@ class PostsPage extends React.Component {
         super(props);
         this.state= {
             postData: [],
-            searchInput: ''
+            searchInput: '',
+            filteredPosts: []
         }
     }
 
@@ -40,11 +41,17 @@ class PostsPage extends React.Component {
             return null;
         });
         this.setState({
-            postData: filteredPosts
+            filteredPosts
         })
       };
 
     render() {
+        let posts = [];
+        if (this.state.filteredPosts.length > 0) {
+            posts = this.state.filteredPosts
+        } else {
+            posts = this.state.postData
+        }
         return(
             <PostsPageCont>
                 <SearchBar
@@ -52,7 +59,7 @@ class PostsPage extends React.Component {
                     searchInput={this.state.searchInput}
                     searchFilter={this.searchFilter}
                 />
-                {this.state.postData.map((data, index) => {
+                {posts.map((data, index) => {
                     return <PostContainer
                                 username={data.username}
                                 thumbnailUrl={data.thumbnailUrl}
